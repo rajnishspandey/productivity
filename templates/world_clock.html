@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    .time-comparison {
+        margin-top: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    #comparison-result {
+        margin-top: 15px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>World Clock Timezone Comparison</h1>
+    
+    <div class="time-comparison">
+        <h2>Compare Timezones</h2>
+        <form id="timezone-compare-form">
+            <div class="form-group">
+                <label for="base_zone">Base Timezone:</label>
+                <select id="base_zone" name="base_zone" required>
+                    {% for time in world_times %}
+                    <option value="{{ time.zone }}">{{ time.display_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="compare_zone">Compare with Timezone:</label>
+                <select id="compare_zone" name="compare_zone" required>
+                    {% for time in world_times %}
+                    <option value="{{ time.zone }}">{{ time.display_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Compare Timezones</button>
+        </form>
+        
+        <div id="comparison-result"></div>
+    </div>
+
+    <h2>Current Times Worldwide</h2>
+    <div class="world-times">
+        {% for time in world_times %}
+        <div class="time-card">
+            <h3>{{ time.display_name }}</h3>
+            <p>{{ time.time }}</p>
+            <small>UTC{{ time.offset }}</small>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+document.getElementById('timezone-compare-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const baseZone = document.getElementById('base_zone').value;
+    const compareZone = document.getElementById('compare_zone').value;
+    const resultDiv = document.getElementById('comparison-result');
+    
+    // Clear previous result
+    resultDiv.innerHTML = 'Comparing...';
+    
+    fetch('/world-clock/compare', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            resultDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="success">
+                    <h3>Timezone Comparison</h3>
+                    <p><strong>${data.base_zone}</strong> time: ${data.base_time}</p>
+                    <p><strong>${data.compare_zone}</strong> time: ${data.compare_time}</p>
+                    <p>Time Difference: ${data.time_difference}</p>
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        resultDiv.innerHTML = `<div class="error">An error occurred: ${error.message}</div>`;
+    });
+});
+</script>
+{% endblock %}
+{% endblock %}

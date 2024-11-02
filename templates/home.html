@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Multi-Tool Web Application</h1>
+    <div class="tools-grid">
+        {% for tool in tools %}
+        <div class="tool-card">
+            <h2>{{ tool.name }}</h2>
+            <p>{{ tool.description }}</p>
+            <a href="{{ tool.url }}" class="btn">Use Tool</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

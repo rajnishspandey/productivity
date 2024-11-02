@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>YouTube Video Transcript</h1>
+    
+    <form method="POST">
+        <input type="text" name="youtube_url" placeholder="Enter YouTube Video URL" required>
+        <button type="submit">Get Transcript</button>
+    </form>
+
+    {% if error %}
+    <div class="error">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    {% if transcript %}
+    <div class="transcript">
+        <h2>Transcript</h2>
+        <pre>{{ transcript }}</pre>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+

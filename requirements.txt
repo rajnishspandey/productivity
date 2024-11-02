@@ -1,0 +1,6 @@
+flask
+youtube-transcript-api
+requests
+pytube
+pytz
+gunicorn
