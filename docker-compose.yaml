@@ -1,0 +1,6 @@
+services:
+  img:
+    build: .
+    container_name: productivty-app-continer
+    ports:
+      - 5500:5000

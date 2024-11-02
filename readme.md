@@ -59,4 +59,43 @@ Now we have to run it through container
 
 it will redirect you to the browser and you should see the app running
 
+***This UI can be different as it's possible that the code is updated***
 ![output](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qz3bq5fcgatlywx9a6y3.png)
+
+***
+
+# Deployment with docker Compose
+
+### To learn more about Docker images, containers and basic Flask app deployment on docker [read blog](https://dev.to/rajnishspandey/from-setup-to-deployment-running-a-flask-app-in-docker-on-mac-2fpp)
+
+In this blog we are going to deploy our [flask application](https://github.com/rajnishspandey/productivity.git) on Docker using docker compose file.
+
+how to clone, create, deploy everything is already covered [here](https://dev.to/rajnishspandey/from-setup-to-deployment-running-a-flask-app-in-docker-on-mac-2fpp) please read and follow the instructions or you can just start by 
+
+> `git clone https://github.com/rajnishspandey/productivity.git`
+
+- `docker system prune -a` to delete all containers, images and caches.
+
+> `docker compose up`
+
+Docker Images
+![Docker Images](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fysvvwijxavcn6tkq32e.png)
+
+Docker Containers
+![Docker Containers](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k7nyww2vgq4obssju9ei.png)
+
+Running flask Application
+***This UI can be different as it's possible that the code is updated***
+![Running Application](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xaqsqctbqg93hsafe67b.png)
+
+## some useful docker commands
+- `docker images` to check all the images 
+- `docker build -t <new-image-name>-app .` to build an images from your application
+- `docker image rm <image-name>` - to delete image which is not in use
+- `docker run -it --name <new_container> <base-image> /bin/bash` to create a new container and run it from base image. (here above we had python as base image)
+- `docker image rm <image-name> -f` delete image which is in use forcefully
+- `docker ps -a` to see all the containers running
+- `docker container rm <container-name>` to delete container which is not running
+- `docker container rm <container-name> -f` to delete container forcefully which is running
+- `docker system prune -a` to delete all containers, images and caches.
+- `docker compose up` to run docker compose file and created image
