@@ -88,6 +88,37 @@ Running flask Application
 ***This UI can be different as it's possible that the code is updated***
 ![Running Application](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xaqsqctbqg93hsafe67b.png)
 
+***
+# [Share docker image on docker hub](https://dev.to/rajnishspandey/share-docker-image-on-docker-hub-2d6h/edit)
+
+- `docker login` run it in terminal if you are already logged in to [docker-hub](https://hub.docker.com/) it will authenticate if not just provide your credentials in Terminal and get authenticated.
+
+- now run the command we have saved above from docker hub repository in Terminal `docker push rajnishspandey/productivity-docker`.
+
+This will check our image and latest tag of the docker image and if found it will publish the image to docker-hub
+
+Now let's check the image in docker-hub
+
+![rajnishspandey/productivity-docker](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5vbn8xfn405mtz6r27x4.png)
+
+![Image deleted](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2ru1gmsa8ftj4w1u5bus.png)
+
+now run pull request
+
+> `docker pull rajnishspandey/productivity-docker`
+
+![Image created](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2wsnezdrcdqj641ustpw.png)
+
+
+### Learn how to 
+#### - [From Setup to Deployment: Running a Flask App in Docker](https://dev.to/rajnishspandey/from-setup-to-deployment-running-a-flask-app-in-docker-on-mac-2fpp)
+
+#### - [Deploy Flask app using docker Compose](https://dev.to/rajnishspandey/deploy-flask-app-using-docker-compose-4i81)
+
+#### - [Share docker image on docker hub](https://dev.to/rajnishspandey/share-docker-image-on-docker-hub-2d6h/edit)
+
+***"Happy Learning"***
+
 ## some useful docker commands
 - `docker images` to check all the images 
 - `docker build -t <new-image-name>-app .` to build an images from your application
@@ -99,3 +130,6 @@ Running flask Application
 - `docker container rm <container-name> -f` to delete container forcefully which is running
 - `docker system prune -a` to delete all containers, images and caches.
 - `docker compose up` to run docker compose file and created image
+- `docker pull rajnishspandey/productivity-docker` to pull the latest image from docker-hub
+- `docker push rajnishspandey/productivity-docker` - to push the latest image on docker-hub
+- `docker login` - to login on docker-hub through terminal
