@@ -1,0 +1,6 @@
+.ven*/
+__pycache__/
+.DS_Store
+.git/
+.gitignore
+readme.md
