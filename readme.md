@@ -117,6 +117,8 @@ now run pull request
 
 #### - [Share docker image on docker hub](https://dev.to/rajnishspandey/share-docker-image-on-docker-hub-2d6h/edit)
 
+# [productivity-docker image on docker-hub for public use](https://hub.docker.com/r/rajnishspandey/productivity-docker)
+
 ***"Happy Learning"***
 
 ## some useful docker commands
