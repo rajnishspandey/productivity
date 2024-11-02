@@ -26,9 +26,9 @@ Here I have created a project and it's in my local I want to create a new reposi
 
 > `git init`
 
-***in case you want to remove the git initialised you can run below command and do git init again to add.***
+~~***in case you want to remove the git initialised you can run below command and do git init again to add.***~~
 
-> ***rm -rf git***
+> ~~***rm -rf git***~~
 
 > `git add .`
 
