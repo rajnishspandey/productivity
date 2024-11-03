@@ -1,4 +1,4 @@
-# productivity
+# productivity - [Buy me a coffee](https://rajnishspandey.gumroad.com/coffee)
 This repository has a Python Flask application  which is running through docker container
 
 # [From Setup to Deployment: Running a Flask App in Docker on Mac](https://dev.to/rajnishspandey/from-setup-to-deployment-running-a-flask-app-in-docker-on-mac-2fpp)
@@ -120,6 +120,8 @@ now run pull request
 # [productivity-docker image on docker-hub for public use](https://hub.docker.com/r/rajnishspandey/productivity-docker)
 
 ***"Happy Learning"***
+
+# [Buy me a coffee](https://rajnishspandey.gumroad.com/coffee)
 
 ## some useful docker commands
 - `docker images` to check all the images 
