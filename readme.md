@@ -3,6 +3,8 @@ This repository has a Python Flask application  which is running through docker 
 
 ## [From Setup to Deployment: Running a Flask App in Docker on Mac](https://dev.to/rajnishspandey/from-setup-to-deployment-running-a-flask-app-in-docker-on-mac-2fpp)
 
+
+- Read the mentioned blog from above link
 - run using Terminal or Docker Desktop
 > `docker run -it --name rajnish_python python /bin/bash`
 
